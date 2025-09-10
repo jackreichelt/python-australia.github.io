@@ -220,7 +220,7 @@ main {
     transition: box-shadow 0.2s;
 
     &:hover {
-        box-shadow: 0 4px 20px color-mix(in oklab, var(--python-blue), transparent 50%);
+        box-shadow: 0 4px 20px color-mix(in oklab, light-dark(var(--python-blue), var(--python-yellow)), transparent 50%);
     }
 
     .meetup-header {
