@@ -21,19 +21,22 @@ a:hover, a:focus {
 /* Discord Promo Section */
 
 .discord-promo {
-    background: var(--python-yellow);
-    padding: 2rem 1rem;
-    margin: 2rem auto 2.5rem auto;
-    border-radius: 14px;
-    max-width: 900px;
-    box-shadow: 0 4px 24px var(--faint-shadow);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 2rem;
 }
 
 .discord-container {
     display: flex;
-    align-items: center;
-    gap: 2rem;
     flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: var(--python-yellow);
+    border-radius: 14px;
+    max-width: 900px;
+    box-shadow: 0 4px 24px var(--faint-shadow);
 }
 
 .discord-logo {
@@ -93,7 +96,6 @@ a:hover, a:focus {
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    margin-bottom: 2rem;
     background: #f7f7f7;
     color: var(--dark-text);
 }
@@ -107,12 +109,14 @@ header {
     text-align: center;
 
     img {
-        margin-left: -56px;
-        margin-top: -56px;
+        padding: 20px;
+        margin-left: -76px;
+        margin-top: -76px;
         justify-self: start;
         align-self: flex-start;
         max-height: 10rem;
         transition: transform 0.4s ease-in-out;
+        z-index: 2;
 
         &:hover {
             transform: translate(76px, 76px);
@@ -131,7 +135,8 @@ header {
     }
 
     div {
-        padding: 1rem 0.5rem;
+        margin-left: -76px;
+        padding: 1.5rem 0rem;
         width: 100%;
     }
 
@@ -148,14 +153,15 @@ header {
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem 2rem;
+    row-gap: 2rem;
 }
 
 .meetups h2 {
+    margin: 0px;
     font-size: 2rem;
-    margin-bottom: 2rem;
     color: var(--python-blue);
     text-align: left;
 }
@@ -163,9 +169,10 @@ main {
 .meetup-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: min-content;
     column-gap: 2rem;
-    row-gap: 3.5rem;
+    row-gap: 2rem;
 }
 
 
@@ -177,14 +184,14 @@ main {
     flex-direction: column;
     padding: 1.2rem 1rem 1rem 1rem;
     transition: box-shadow 0.2s;
-    min-height: 240px;
-    height: 100%;
 
     &:hover {
         box-shadow: 0 4px 20px color-mix(in oklab, var(--python-blue), transparent 50%);
     }
 
     .meetup-header {
+        font-size: 0.8rem;
+        text-align: center;
         display: flex;
         column-gap: 1rem;
         align-items: center;
@@ -235,46 +242,22 @@ main {
 }
 
 @media (max-width: 900px) {
-    .meetup-cell {
-        min-height: 180px;
+    .discord-promo {
+        margin: 2rem;
     }
-    .meetup-photo {
-        height: 90px;
-    }
-}
 
-@media (max-width: 600px) {
-    .meetup-cell {
-        min-height: 120px;
-    }
-    .meetup-photo {
-        height: 60px;
-    }
-}
-
-@media (max-width: 900px) {
     .meetup-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 1.2rem;
     }
 }
 
 @media (max-width: 600px) {
+    main {
+        padding: 0 2rem 1rem;
+    }
+
     .meetup-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(9, 1fr);
-        gap: 1rem;
-    }
-    .meetup-cell {
-        padding: 1rem 0.5rem;
-    }
-    .meetup-logo {
-        width: 50px;
-        height: 50px;
-    }
-    .meetup-photo {
-        max-width: 100%;
-        height: 80px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 1rem;
     }
 }
