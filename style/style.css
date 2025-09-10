@@ -1,11 +1,24 @@
 :root {
+    color-scheme: light dark;
     --python-blue: #3776a9;
     --dark-blue: color-mix(in oklab, var(--python-blue), black 20%);
+    --darker-blue: color-mix(in oklab, var(--python-blue), black 45%);
     --python-yellow: #ffd343;
     --dark-yellow: color-mix(in oklab, var(--python-yellow), black 20%);
     --dark-text: #444444;
     --faint-shadow: #44444433;
-    --bright-text: #f9f9f9;
+    --light-text: #f9f9f9;
+    --light-background: #f7f7f7;
+    --dark-background: #36393e;
+    --light-card: #ffffff;
+    --dark-card: #494c51;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: light-dark(var(--light-background), var(--dark-background));
+    color: light-dark(var(--dark-text), var(--light-text));
 }
 
 /* General link colour */
@@ -33,42 +46,50 @@ a:hover, a:focus {
     gap: 2rem;
     align-items: center;
     padding: 2rem 1rem;
-    background: var(--python-yellow);
+    background: light-dark(var(--python-yellow), var(--dark-background));
     border-radius: 14px;
     max-width: 900px;
     box-shadow: 0 4px 24px var(--faint-shadow);
+    border: 2px solid light-dark(var(--python-yellow), var(--dark-yellow));
 }
 
 .discord-logo {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    background-color: var(--python-blue);
+    background-color: light-dark(var(--python-blue), var(--python-yellow));
     border-radius: 100%;
-    border: 2px solid var(--python-blue);
+    border: 2px solid light-dark(var(--python-blue), var(--python-yellow));
     box-shadow: 0 2px 8px var(--faint-shadow);
 }
 
 .discord-info {
-    color: var(--python-blue);
     flex: 1;
     min-width: 220px;
 }
+
 .discord-info h2 {
     margin: 0 0 0.5rem 0;
     font-size: 1.7rem;
-    color: var(--python-blue);
+    color: light-dark(var(--python-blue), var(--python-yellow));
     letter-spacing: 1px;
 }
+
 .discord-info p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--dark-text);
+
+    a {
+        color: light-dark(var(--python-blue), var(--python-yellow));
+        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+    }
 }
+
+
 .discord-link {
     display: inline-block;
     background: var(--python-blue);
-    color: var(--bright-text);
+    color: var(--light-text);
     font-weight: bold;
     padding: 0.7rem 1.4rem;
     border-radius: 8px;
@@ -77,34 +98,16 @@ a:hover, a:focus {
     box-shadow: 0 2px 8px var(--faint-shadow);
     transition: background 0.2s, color 0.2s;
 }
-.discord-link:hover {
-    background: var(--python-blue);
-    color: var(--bright-text);
-}
 
-@media (max-width: 700px) {
-    .discord-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    .discord-logo {
-        width: 70px;
-        height: 70px;
-    }
-}
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: #f7f7f7;
-    color: var(--dark-text);
+.discord-link:hover {
+    color: var(--light-text);
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--python-blue);
+    background: light-dark(var(--python-blue), var(--dark-blue));
     color: #fff;
     text-align: center;
 
@@ -162,7 +165,7 @@ main {
 .meetups h2 {
     margin: 0px;
     font-size: 2rem;
-    color: var(--python-blue);
+    color: light-dark(var(--python-blue), var(--python-yellow));;
     text-align: left;
 }
 
@@ -177,7 +180,7 @@ main {
 
 
 .meetup-cell {
-    background: #fff;
+    background: light-dark(var(--light-card), var(--dark-card));
     border-radius: 10px;
     box-shadow: 0 2px 12px var(--faint-shadow);
     display: flex;
@@ -195,6 +198,12 @@ main {
         display: flex;
         column-gap: 1rem;
         align-items: center;
+        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+    }
+
+    a {
+        color: light-dark(var(--python-blue), var(--python-yellow));
+        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
     }
 }
 
@@ -214,7 +223,7 @@ main {
 .meetup-cell h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
-    color: var(--python-blue);
+    color: light-dark(var(--python-blue), var(--python-yellow));
     text-align: left;
 }
 
@@ -226,7 +235,6 @@ main {
 
 .details {
     font-style: italic;
-    color: var(--dark-text);
     margin-bottom: 0.5rem;
     text-align: left;
 }
@@ -259,5 +267,16 @@ main {
     .meetup-grid {
         grid-template-columns: repeat(1, 1fr);
         row-gap: 1rem;
+    }
+
+    .discord-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .discord-logo {
+        width: 70px;
+        height: 70px;
     }
 }
