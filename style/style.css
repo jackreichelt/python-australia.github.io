@@ -1,22 +1,32 @@
+:root {
+    --python-blue: #3776a9;
+    --dark-blue: color-mix(in oklab, var(--python-blue), black 20%);
+    --python-yellow: #ffd343;
+    --dark-yellow: color-mix(in oklab, var(--python-yellow), black 20%);
+    --dark-text: #444444;
+    --faint-shadow: #44444433;
+    --bright-text: #f9f9f9;
+}
+
 /* General link colour */
 a {
-    color: #306998;
+    color: var(--python-blue);
     text-decoration: underline;
     transition: color 0.2s;
 }
 a:hover, a:focus {
-    color: #4B8BBE;
+    color: var(--python-blue);
     text-decoration: underline;
 }
 /* Discord Promo Section */
 
 .discord-promo {
-    background: #FFD600;
+    background: var(--python-yellow);
     padding: 2.5rem 1rem;
     margin: 2rem auto 2.5rem auto;
     border-radius: 14px;
     max-width: 900px;
-    box-shadow: 0 4px 24px rgba(88,101,242,0.10);
+    box-shadow: 0 4px 24px var(--faint-shadow);
 }
 
 .discord-container {
@@ -30,42 +40,43 @@ a:hover, a:focus {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background-color: var(--python-blue);
+    border-radius: 100%;
+    border: 2px solid var(--dark-blue);
+    box-shadow: 0 2px 8px var(--faint-shadow);
 }
 
 .discord-info {
-    color: #306998;
+    color: var(--python-blue);
     flex: 1;
     min-width: 220px;
 }
 .discord-info h2 {
     margin: 0 0 0.5rem 0;
     font-size: 1.7rem;
-    color: #4B8BBE;
+    color: var(--python-blue);
     letter-spacing: 1px;
 }
 .discord-info p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: #646464;
+    color: var(--dark-text);
 }
 .discord-link {
     display: inline-block;
-    background: #4B8BBE;
-    color: #fff;
+    background: var(--python-blue);
+    color: var(--bright-text);
     font-weight: bold;
     padding: 0.7rem 1.4rem;
     border-radius: 8px;
     text-decoration: none;
     font-size: 1.1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 8px var(--faint-shadow);
     transition: background 0.2s, color 0.2s;
 }
 .discord-link:hover {
-    background: #306998;
-    color: #fff;
+    background: var(--python-blue);
+    color: var(--bright-text);
 }
 
 @media (max-width: 700px) {
@@ -82,12 +93,13 @@ a:hover, a:focus {
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
+    margin-bottom: 2rem;
     background: #f7f7f7;
-    color: #222;
+    color: var(--dark-text);
 }
 
 header {
-    background: #306998;
+    background: var(--python-blue);
     color: #fff;
     padding: 2rem 1rem 1rem 1rem;
     text-align: center;
@@ -105,15 +117,15 @@ header h1 {
 }
 
 main {
-    padding: 2rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .meetups h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #306998;
+    color: var(--python-blue);
     text-align: left;
 }
 
@@ -129,7 +141,7 @@ main {
 .meetup-cell {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px var(--faint-shadow);
     display: flex;
     flex-direction: column;
     padding: 1.2rem 1rem 1rem 1rem;
@@ -138,7 +150,7 @@ main {
     height: 100%;
 }
 .meetup-cell:hover {
-    box-shadow: 0 4px 20px rgba(48,105,152,0.15);
+    box-shadow: 0 4px 20px color-mix(in oklab, var(--python-blue), transparent 50%);
 }
 
 .meetup-logo {
@@ -149,25 +161,28 @@ main {
     background: #e5e5e5;
     margin-bottom: 1rem;
     align-self: center;
+
+    &.rounded {
+        border-radius: 100%;
+    }
 }
 
 .meetup-cell h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.25rem;
-    color: #2b5b84;
+    color: var(--python-blue);
     text-align: left;
 }
 
 .blurb {
     margin: 0 0 0.5rem 0;
     font-size: 1rem;
-    color: #333;
     text-align: left;
 }
 
 .details {
     font-style: italic;
-    color: #555;
+    color: var(--dark-text);
     margin-bottom: 0.5rem;
     text-align: left;
 }
