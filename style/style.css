@@ -1,5 +1,6 @@
 :root {
     color-scheme: light dark;
+    --bright-blue: color-mix(in oklab, var(--python-blue), white 50%);
     --python-blue: #3776a9;
     --dark-blue: color-mix(in oklab, var(--python-blue), black 20%);
     --darker-blue: color-mix(in oklab, var(--python-blue), black 45%);
@@ -12,6 +13,14 @@
     --dark-background: #36393e;
     --light-card: #ffffff;
     --dark-card: #494c51;
+}
+
+.theme-light {
+    color-scheme: light;
+}
+
+.theme-dark {
+    color-scheme: dark;
 }
 
 body {
@@ -111,7 +120,7 @@ header {
     color: #fff;
     text-align: center;
 
-    img {
+    > img {
         padding: 20px;
         margin-left: -76px;
         margin-top: -76px;
@@ -147,6 +156,28 @@ header {
         margin: 0 0 0.5rem 0;
         font-size: 2.5rem;
     }
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    align-self: flex-start;
+    padding: 1rem;
+    color: light-dark(var(--light-text), var(--bright-blue));
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--python-yellow);
+}
+
+.theme-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+.theme-dark .theme-toggle>svg {
+    transform: rotate(180deg);
 }
 
 .intro {
