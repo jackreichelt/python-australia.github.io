@@ -99,15 +99,26 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--python-blue);
     color: #fff;
-    padding: 2rem 1rem 1rem 1rem;
     text-align: center;
-}
 
-header h1 {
-    margin: 0 0 0.5rem 0;
-    font-size: 2.5rem;
+    img {
+        justify-self: start;
+        height: 10rem;
+    }
+
+    div {
+        width: 100%;
+    }
+
+    h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+    }
 }
 
 .intro {
@@ -148,9 +159,10 @@ main {
     transition: box-shadow 0.2s;
     min-height: 240px;
     height: 100%;
-}
-.meetup-cell:hover {
-    box-shadow: 0 4px 20px color-mix(in oklab, var(--python-blue), transparent 50%);
+
+    &:hover {
+        box-shadow: 0 4px 20px color-mix(in oklab, var(--python-blue), transparent 50%);
+    }
 }
 
 .meetup-logo {
