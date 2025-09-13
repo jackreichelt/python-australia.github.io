@@ -114,16 +114,18 @@ a:hover, a:focus {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: light-dark(var(--python-blue), var(--dark-blue));
     color: #fff;
     text-align: center;
 
     > img {
-        padding: 20px;
         margin-left: -76px;
         margin-top: -76px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-top: 20px;
         justify-self: start;
         align-self: flex-start;
         max-height: 10rem;
@@ -137,9 +139,7 @@ header {
 
     @media (prefers-reduced-motion: reduce) {
         img {
-            margin-left: 20px;
-            margin-top: 20px;
-            margin-right: -20px
+            margin-left: 0px;
         }
         img:hover {
             transform: none;
@@ -147,7 +147,6 @@ header {
     }
 
     div {
-        margin-left: -76px;
         padding: 1.5rem 0rem;
         width: 100%;
     }
@@ -162,7 +161,7 @@ header {
     background: none;
     border: none;
     align-self: flex-start;
-    padding: 1rem;
+    padding: 1rem 1rem 0 0;
     color: light-dark(var(--light-text), var(--bright-blue));
     cursor: pointer;
     transition: color 0.2s ease;
