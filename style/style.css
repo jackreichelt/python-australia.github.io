@@ -89,7 +89,7 @@ a:hover, a:focus {
     margin-bottom: 1rem;
 
     a {
-        color: light-dark(var(--python-blue), var(--python-yellow));
+        color: light-dark(var(--dark-blue), var(--python-yellow));
         text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
     }
 }
