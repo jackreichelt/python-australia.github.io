@@ -32,95 +32,102 @@ body {
     color: light-dark(var(--dark-text), var(--light-text));
 }
 
-/* General link colour */
 a {
-    color: var(--python-blue);
-    text-decoration: underline;
-    transition: color 0.2s;
-}
-a:hover, a:focus {
-    color: var(--python-blue);
     text-decoration: underline;
 }
-/* Discord Promo Section */
 
 .promo {
     display: flex;
     align-content: center;
     justify-content: center;
     margin: 2rem;
+
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem 1rem;
+        border-radius: 14px;
+        max-width: 900px;
+        box-shadow: 0 4px 24px var(--faint-shadow);
+
+        &.discord {
+            background: light-dark(var(--python-yellow), var(--dark-background));
+            border: 2px solid light-dark(var(--python-yellow), var(--dark-yellow));
+            color: light-dark(var(--dark-text), var(--light-text))
+        }
+
+        &.github {
+            background: light-dark(var(--light-background), var(--dark-background));
+            border: 2px solid light-dark(var(--dark-background), var(--light-background));
+        }
+
+        h2 {
+            color: light-dark(var(--python-blue), var(--python-yellow));
+        }
+    }
 }
-
-.promo-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    padding: 2rem 1rem;
-    background: light-dark(var(--python-yellow), var(--dark-background));
-    border-radius: 14px;
-    max-width: 900px;
-    box-shadow: 0 4px 24px var(--faint-shadow);
-    border: 2px solid light-dark(var(--python-yellow), var(--dark-yellow));
-}
-
-
 
 .promo-logo {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    background-color: light-dark(var(--python-blue), var(--python-yellow));
     border-radius: 100%;
-    border: 2px solid light-dark(var(--python-blue), var(--python-yellow));
     box-shadow: 0 2px 8px var(--faint-shadow);
+
+    &.discord {
+        background-color: light-dark(var(--python-blue), var(--python-yellow));
+        border: 2px solid light-dark(var(--python-blue), var(--python-yellow));
+    }
+
+    &.github {
+        background-color: var(--light-background);
+        color: var(--light-background);
+        border: 2px solid light-dark(var(--dark-text), var(--light-text));
+    }
 }
 
 .promo-info {
     flex: 1;
     min-width: 220px;
-}
-
-.promo-info h2 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.7rem;
-    letter-spacing: 1px;
-}
-
-.promo-info p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-
-}
-
-.discord-promo-color {
-    color: light-dark(var(--python-blue), var(--python-yellow));
-
-    p a {
-        color: light-dark(var(--dark-blue), var(--python-yellow));
-        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
-    }
-}
-.github-border {
-    border: 2px solid light-dark(var(--github-light-grey), var(--github-light-grey));
-
-}
-.github-promo-colour {
-    background: light-dark(var(--github-light-grey), var(--dark-background));
 
     h2 {
-        text-decoration-color: light-dark(var(--dark-text), var(--github-light-grey));
-
+        margin: 0 0 0.5rem 0;
+        font-size: 1.7rem;
+        letter-spacing: 1px;
     }
+
     p {
-        text-decoration-color: light-dark(var(--dark-text), var(--github-light-grey));
-        color: light-dark(var(--dark-text), var(--github-light-grey));
-    }
-    p a {
-        color: light-dark(var(--dark-blue), var(--python-yellow));
-        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
     }
 
+    a {
+        text-align: center;
+    }
+
+    &.discord {
+        p a {
+            color: light-dark(var(--dark-blue), var(--python-yellow));
+            text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+
+            &:visited {
+                color: light-dark(var(--darker-blue), var(--dark-yellow))
+            }
+        }
+    }
+
+    &.github {
+        p a {
+            color: light-dark(var(--dark-blue), var(--python-yellow));
+            text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+
+            &:visited {
+                color: light-dark(var(--darker-blue), var(--dark-yellow))
+            }
+        }
+    }
 }
 
 .promo-link {
@@ -133,11 +140,10 @@ a:hover, a:focus {
     text-decoration: none;
     font-size: 1.1rem;
     box-shadow: 0 2px 8px var(--faint-shadow);
-    transition: background 0.2s, color 0.2s;
-}
 
-.promo-link:hover {
-    color: var(--light-text);
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 header {
@@ -308,9 +314,6 @@ main {
 }
 
 @media (max-width: 900px) {
-    .discord-promo {
-        margin: 2rem;
-    }
 
     .meetup-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -327,13 +330,13 @@ main {
         row-gap: 1rem;
     }
 
-    .discord-container {
+    .promo>div {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    .discord-logo {
+    .promo-logo {
         width: 70px;
         height: 70px;
     }
