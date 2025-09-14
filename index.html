@@ -12,6 +12,7 @@
         <img src="assets/logos/python-logo-outline.svg" alt="Python Snake">
         <div>
             <h1>Python Australia</h1>
+
             <p class="intro">Python Australia is a community-run organisation dedicated to bringing together Python enthusiasts from across the country. We aim to connect Python-appreciators with local meetups, events, and initiatives to help grow and connect the Python community in Australia.</p>
         </div>
         <button class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme" onClick="toggleTheme()">
@@ -21,16 +22,34 @@
         </button>
     </header>
 
-    <section class="discord-promo">
-        <div class="discord-container">
-            <img src="assets/logos/pyaus-logo.svg" alt="Discord Logo" class="discord-logo">
-            <div class="discord-info">
+    <section class="promo">
+        <div class="promo-container discord-container">
+            <img src="assets/logos/pyaus-logo.svg" alt="Discord Logo" class="promo-logo">
+            <div class="promo-info discord-promo-color">
                 <h2>Join the Python Australia Community Discord!</h2>
                 <p>Connect with Python enthusiasts from all over Australia. Our Discord server is the perfect place to chat, get notified about events in your area, and discover new ways to get involved in the community. Please remember to abide by our <a href="https://policies.python.org/python.org/code-of-conduct/">Code of Conduct</a> (courtesy of the PSF).</p>
-                <a href="https://discord.gg/HNt6YddsaK" class="discord-link" target="_blank">Join the Python Australia Discord</a>
+                <a href="https://discord.gg/HNt6YddsaK" class="promo-link" target="_blank">Join the Python Australia Discord</a>
             </div>
         </div>
     </section>
+
+    <section class="promo">
+        <div class="promo-container github-border github-promo-colour">
+            <img src="assets/logos/github.svg" alt="Github Logo" class="promo-logo github-border github-promo-colour">
+<!--            TODO: would be great if this SVG was a better colour -->
+            <div class="promo-info github-promo-colour">
+                <h2>Python Australia Github</h2>
+                <p>
+<!--                TODO: need to gind better wording for this-->
+                    Python Australia hosts it's PAEPs (Python Australia Enhancement Proposal) on GitHub.
+                    if you are interested in the any of the Python Australia Documents you can find them here.<br/>
+                    <a href="https://github.com/python-australia/" target="_blank">github.com/python-australia</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
 
 
     <main class="meetups">

@@ -13,6 +13,8 @@
     --dark-background: #36393e;
     --light-card: #ffffff;
     --dark-card: #494c51;
+    --github-light-grey: #909090;
+    --github-dark-grey: #303030;
 }
 
 .theme-light {
@@ -42,14 +44,14 @@ a:hover, a:focus {
 }
 /* Discord Promo Section */
 
-.discord-promo {
+.promo {
     display: flex;
     align-content: center;
     justify-content: center;
     margin: 2rem;
 }
 
-.discord-container {
+.promo-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -62,7 +64,9 @@ a:hover, a:focus {
     border: 2px solid light-dark(var(--python-yellow), var(--dark-yellow));
 }
 
-.discord-logo {
+
+
+.promo-logo {
     width: 90px;
     height: 90px;
     object-fit: contain;
@@ -72,30 +76,54 @@ a:hover, a:focus {
     box-shadow: 0 2px 8px var(--faint-shadow);
 }
 
-.discord-info {
+.promo-info {
     flex: 1;
     min-width: 220px;
 }
 
-.discord-info h2 {
+.promo-info h2 {
     margin: 0 0 0.5rem 0;
     font-size: 1.7rem;
-    color: light-dark(var(--python-blue), var(--python-yellow));
     letter-spacing: 1px;
 }
 
-.discord-info p {
+.promo-info p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
 
-    a {
+}
+
+.discord-promo-color {
+    color: light-dark(var(--python-blue), var(--python-yellow));
+
+    p a {
         color: light-dark(var(--dark-blue), var(--python-yellow));
         text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
     }
 }
+.github-border {
+    border: 2px solid light-dark(var(--github-light-grey), var(--github-light-grey));
 
+}
+.github-promo-colour {
+    background: light-dark(var(--github-light-grey), var(--dark-background));
 
-.discord-link {
+    h2 {
+        text-decoration-color: light-dark(var(--dark-text), var(--github-light-grey));
+
+    }
+    p {
+        text-decoration-color: light-dark(var(--dark-text), var(--github-light-grey));
+        color: light-dark(var(--dark-text), var(--github-light-grey));
+    }
+    p a {
+        color: light-dark(var(--dark-blue), var(--python-yellow));
+        text-decoration-color: light-dark(var(--python-blue), var(--python-yellow));
+    }
+
+}
+
+.promo-link {
     display: inline-block;
     background: var(--python-blue);
     color: var(--light-text);
@@ -108,7 +136,7 @@ a:hover, a:focus {
     transition: background 0.2s, color 0.2s;
 }
 
-.discord-link:hover {
+.promo-link:hover {
     color: var(--light-text);
 }
 
